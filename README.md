@@ -1,1 +1,1 @@
-# auto-digitazation
+# Automatic Digitazation Object Using YOLO Segmentation
