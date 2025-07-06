@@ -1,45 +1,42 @@
-# Automatic Digitization Object Using YOLO Segmentation
+# Automatic Object Digitization Using YOLO Segmentation
 
-![Screenshot of Digitization Results](https://raw.githubusercontent.com/NibroosAbrar/auto-digitization/main/docs/results_example.png)
-*(Ganti URL gambar di atas dengan URL screenshot hasil digitasi Anda yang sudah disamarkan koordinatnya. Anda mungkin perlu membuat folder `docs` dan mengunggah gambar ke sana.)*
+## Description
+This project offers an automated solution for object digitization from large-scale aerial imagery using the YOLO Segmentation algorithm. Designed to overcome the inefficiencies and errors of manual labeling methods, especially in geospatial and agricultural applications, this project enables faster and more accurate data acquisition for critical decision-making.
 
-## Deskripsi
-Proyek ini menghadirkan solusi otomatis untuk digitasi objek dari citra udara skala besar menggunakan algoritma YOLO Segmentation. Dirancang untuk mengatasi inefisiensi dan kesalahan pada metode pelabelan manual, khususnya dalam aplikasi geospasial dan pertanian, proyek ini memungkinkan akuisisi data yang lebih cepat dan akurat untuk pengambilan keputusan penting.
+## Key Features
+* **Automated & Efficient Digitization:** Full automation of the object digitization process.
+* **Precise Vector Data Output:** Generates vector data with accurate and detailed polygons.
+* **High Scalability:** Capable of processing vast areas (dozens to hundreds of hectares) with thousands of objects in hours or even minutes.
+* **Supports Accurate Spatial Analysis:** The generated data is vital for in-depth spatial analysis (e.g., crop health monitoring, nutrient assessment).
+* **User-Friendly Implementation:** The provided code is designed to be easy to use and customizable.
 
-## Fitur Utama
-* **Digitasi Otomatis & Efisien:** Otomatisasi penuh proses digitasi objek.
-* **Output Data Vektor Presisi:** Menghasilkan data vektor dengan poligon yang akurat dan detail.
-* **Skalabilitas Tinggi:** Mampu memproses area luas (puluhan hingga ratusan hektar) dengan ribuan objek dalam hitungan jam atau bahkan menit.
-* **Mendukung Analisis Spasial Akurat:** Data yang dihasilkan vital untuk analisis spasial mendalam (misalnya, pemantauan kesehatan tanaman, estimasi kebutuhan hara).
-* **Implementasi Ramah Pengguna:** Kode yang disediakan dirancang agar mudah digunakan dan dapat disesuaikan.
+## Motivation & Problem Solved
+Object digitization in imagery is a crucial step for in-depth geospatial and agricultural analysis. However, the manual process is incredibly time-consuming, tedious, and prone to errors, especially for very large areas. This traditional approach often becomes a bottleneck in fulfilling the need for rapid decision-making in time-sensitive operations. This project aims to revolutionize this bottleneck by providing a highly efficient and accurate automated alternative.
 
-## Motivasi & Masalah yang Dipecahkan
-Digitasi objek pada citra adalah langkah krusial untuk analisis geospasial dan pertanian yang mendalam. Namun, proses manual sangat memakan waktu, melelahkan, dan rentan kesalahan, terutama untuk area yang sangat luas. Pendekatan tradisional ini seringkali menjadi hambatan dalam memenuhi kebutuhan pengambilan keputusan yang cepat di operasi yang sensitif terhadap waktu. Proyek ini bertujuan untuk merevolusi kemacetan ini dengan menyediakan alternatif otomatis yang sangat efisien dan akurat.
+## How It Works (High-Level)
+This project leverages the power of Deep Learning, specifically the YOLO Segmentation algorithm, to automatically detect and perform object segmentation within aerial imagery. The model is tailored to recognize specific features (e.g., durian tree canopies) and outputs precise vector polygon data, significantly accelerating data acquisition workflows.
 
-## Cara Kerja (Tingkat Tinggi)
-Proyek ini memanfaatkan kekuatan Deep Learning, khususnya algoritma YOLO Segmentation, untuk secara otomatis mendeteksi dan melakukan segmentasi objek dalam citra udara. Model ini disesuaikan untuk mengenali fitur-fitur spesifik (misalnya, kanopi pohon durian) dan menghasilkan data poligon vektor yang presisi, secara signifikan mempercepat alur kerja akuisisi data.
+## Case Study & Example Application
+One successfully demonstrated application is the automated digitization of durian tree canopies from drone imagery. This solution efficiently processed over 2000 objects across a 30-hectare area in approximately 45 minutes to 1 hour, a task that would typically take days if done manually.
 
-## Studi Kasus & Contoh Aplikasi
-Salah satu aplikasi yang berhasil didemonstrasikan adalah digitasi otomatis kanopi pohon durian dari citra drone. Solusi ini secara efisien memproses lebih dari 2000 objek di area 30 hektar dalam waktu sekitar 45 menit hingga 1 jam, sebuah tugas yang secara manual biasanya membutuhkan waktu berhari-hari.
+## Installation
+To set up and run this project, please follow these steps:
 
-## Instalasi
-Untuk menyiapkan dan menjalankan proyek ini, ikuti langkah-langkah di bawah ini:
-
-**Prasyarat:**
+**Prerequisites:**
 * Python 3.8+
 * pip (Python package installer)
 * git
 
-**Langkah-langkah:**
-1.  **Clone repository:**
+**Steps:**
+1.  **Clone the repository:**
     ```bash
     git clone [https://github.com/NibroosAbrar/auto-digitization.git](https://github.com/NibroosAbrar/auto-digitization.git)
     ```
-2.  **Masuk ke direktori proyek:**
+2.  **Navigate to the project directory:**
     ```bash
     cd auto-digitization
     ```
-3.  **Buat dan aktifkan virtual environment (sangat direkomendasikan):**
+3.  **Create and activate a virtual environment (highly recommended):**
     * Linux/macOS:
         ```bash
         python3 -m venv venv
@@ -50,41 +47,45 @@ Untuk menyiapkan dan menjalankan proyek ini, ikuti langkah-langkah di bawah ini:
         py -m venv venv
         .\venv\Scripts\activate
         ```
-4.  **Instal dependensi:**
+4.  **Install dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
-    *(**Penting:** Anda perlu membuat file `requirements.txt` di direktori root repositori Anda yang berisi daftar semua library Python yang dibutuhkan, seperti `ultralytics`, `opencv-python`, `numpy`, `rasterio`, `geopandas`, `torch`, `torchvision`, dll.)*
+    *(**Important:** You need to create a `requirements.txt` file in the root directory of your repository containing a list of all required Python libraries, such as `ultralytics`, `opencv-python`, `numpy`, `rasterio`, `geopandas`, `torch`, `torchvision`, etc.)*
 
-## Penggunaan
-Setelah terinstal, Anda dapat menggunakan skrip yang disediakan untuk memproses citra udara Anda.
+## Usage
+Once installed, you can use the provided scripts to process your aerial imagery.
 
-**Data Input:**
-* Citra udara (misalnya, foto drone, citra satelit) dalam format umum (.tif, .jpg, .png).
-* Pastikan citra Anda sudah *georeferenced* untuk output spasial yang akurat.
+**Input Data:**
+* Aerial imagery (e.g., drone photos, satellite images) in common formats (.tif, .jpg, .png).
+* Ensure your images are georeferenced for accurate spatial output.
 
-**Skrip yang Tersedia:**
+**Available Scripts:**
 
 * ### `kompresi_foto.py` (Image Compression/Preprocessing)
-    Gunakan skrip ini untuk mengkompres atau melakukan pra-pemrosesan citra input Anda sebelum menjalankan inferensi utama.
+    Use this script to compress or preprocess your input images before running the main inference.
     ```bash
     python kompresi_foto.py --input_dir path/to/your/raw_images --output_dir path/to/save/compressed_images
     ```
 
 * ### `cek_properties_foto_udara.py` (Aerial Image Property Check)
-    Skrip ini dapat digunakan untuk memeriksa metadata atau properti citra udara Anda.
+    This script can be used to check the metadata or properties of your aerial imagery.
     ```bash
     python cek_properties_foto_udara.py --image_path path/to/your/image.tif
     ```
 
 * ### `Inferensi model final.py` (Main Inference Script)
-    Ini adalah skrip inti untuk menjalankan digitasi objek otomatis menggunakan model YOLO yang sudah dilatih.
+    This is the core script for running automated object digitization using the trained YOLO model.
     ```bash
     python "Inferensi model final.py" --image_path path/to/your/processed_image.tif --output_path path/to/save/output_vectors.shp --model_path path/to/your/best_yolo_model.pt
     ```
-    *(**Catatan:** Anda perlu menyediakan path ke file model YOLO Anda yang sudah dilatih, misalnya `best.pt`)*
+    *(**Note:** You will need to provide the path to your trained YOLO model file, e.g., `best.pt`)*
 
 **Output:**
-* Shapefile (.shp) atau format vektor lainnya yang berisi poligon hasil digitasi objek yang terdeteksi.
+* Shapefile (.shp) or other vector formats containing the digitized polygons of detected objects.
 
-## Struktur Proyek
+## Contact / Author
+**Muhammad Nibroos Abrar**
+* [LinkedIn Profile](https://www.linkedin.com/in/mnibroosabrar)
+* [GitHub Profile](https://github.com/NibroosAbrar)
+* [Medium Article](https://medium.com/@mnibroosabrar/no-more-manual-labeling-deep-learning-transforms-spatial-digitization-in-agriculture-c9d89bf98e4f)
