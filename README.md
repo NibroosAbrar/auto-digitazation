@@ -51,8 +51,7 @@ To set up and run this project, please follow these steps:
     ```bash
     pip install -r requirements.txt
     ```
-    *(**Important:** You need to create a `requirements.txt` file in the root directory of your repository containing a list of all required Python libraries, such as `ultralytics`, `opencv-python`, `numpy`, `rasterio`, `geopandas`, `torch`, `torchvision`, etc.)*
-
+    
 ## Usage
 Once installed, you can use the provided scripts to process your aerial imagery.
 
