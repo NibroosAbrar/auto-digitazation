@@ -1,0 +1,9 @@
+ultralytics
+rasterio
+numpy
+opencv-python
+geopandas
+shapely
+pillow
+matplotlib
+tqdm
