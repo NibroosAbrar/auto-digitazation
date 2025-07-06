@@ -23,7 +23,7 @@ One successfully demonstrated application is the automated digitization of duria
 To set up and run this project, please follow these steps:
 
 **Prerequisites:**
-* Python 3.8+
+* Python 3.10+
 * pip (Python package installer)
 * git
 
